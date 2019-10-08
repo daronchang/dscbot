@@ -299,19 +299,7 @@ client.on('message', message => {
     message.channel.send(picture);
 }
   // if (msg.startsWith(`${prefix}sydney`)){
-  //   if (message.member.roles.some(r=>["Server Admin", "Goderator"].includes(r.name))){
-  //     var responses = ["Zach I miss you baby", "Carry me daddy pwease", "Zach you enable me", "I need an e-boy to carry me"]
-  //     var randNum = Math.floor(Math.random()*responses.length)
-  //     message.channel.send(responses[randNum]);
-  //
-  //     var pictureArray = ['https://i.imgur.com/tmMhR6U.jpg', 'https://i.imgur.com/TcHF1KG.jpg', 'https://i.imgur.com/rLRcViG.jpg']
-  //     randNum = Math.floor(Math.random()*pictureArray.length)
-  //     sendImage(message, pictureArray[randNum])
-  //   }
-  //   else {
-  //     message.channel.send("Not supported")
-  //   }
-//  }
+ 
   if (msg.startsWith(`${prefix}stfu`)){
     let member = message.mentions.members.first();
     if (member == null) return;
