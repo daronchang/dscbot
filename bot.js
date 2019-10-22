@@ -43,7 +43,7 @@ client.on('message', message => {
   if (message.channel.name === undefined){
     console.log(message.author.username + " said: " + msg)
   }
-  if (msg.startsWith(`${prefix}letstry`)){
+  if (msg.startsWith(`${prefix}editsample`)){
     // const guild = client.guilds.get("563217847556374528")
     // const role = guild.roles.find(role => role.name ==="Sweat")
     const myGuild = client.guilds.get(message.guild.id)
@@ -52,9 +52,9 @@ client.on('message', message => {
     const channel = client.channels.find(ch => ch.name ==='general');
   //  message.channel.send(channel.name + " " + channel.id)
   //  client.channels.get(outputch.id).send("hi")
-    client.channels.get("564953474870149154").send('fuck you all').then((newMessage) =>{
+    client.channels.get("564953474870149154").send('message').then((newMessage) =>{
      setTimeout(function(){
-       newMessage.edit("jk love you")
+       newMessage.edit("edited")
      }, 500);})
 
   }
@@ -118,18 +118,10 @@ client.on('message', message => {
   if (msg.startsWith(`${prefix}sendintroqrsd`)){
     const channel = client.channels.find(ch => ch.name === 'intro');
     var rulelistSTR =
-    "```css" + '\n' +
-    "Welcome to our server!:" + '\n' + '\n'+
-    "We are just a group of gamers looking to socialize, form raid teams, and most importantly have fun!" + '\n' + '\n'+
-    "Our primary game is Fortnite: Save the World, but we gladly deviate to any other game that catches our attention!" + '\n' +'\n'+
-    "We hope you enjoy your stay. It will definitely be a great time!" + '\n' + '\n'+
-    "All that aside, to gain channel access check out the #rules channel." + '\n' +
+    "```css" + '\n'
     "```"
 
-    var selfPromo = "```HTTP" + '\n'+ "Spicypotato makes emotes on Photoshop as a hobby!" + '\n' +
-    "His emote server where he generally makes fun, typically Save the World related emotes is linked below if you wish to check it out!" +'\n'
-    + "https://discord.gg/A9gF7XX" +'\n' +
-    "```"
+    var selfPromo = "```HTTP" + '\n' + "```"
     //channel.send(rulelistSTR)
     channel.send(selfPromo)
   }
@@ -148,7 +140,7 @@ client.on('message', message => {
       }
     }
     else {
-      message.reply("Stop being stupid")
+      message.reply("Fail")
     }
 
   }
@@ -156,15 +148,15 @@ client.on('message', message => {
     if (message.member.roles.some(r=>["Server Admin", "Moderator", "Goderator"].includes(r.name))){
       //message.channel.send("fuck off you annoying ass")
       let member = message.mentions.members.first()
-      message.channel.send(member.displayName + " <= kicking this mofo")
+      message.channel.send(member.displayName + " <= kicking this oerson!")
 
-      member.kick("get yeeted " + member.displayName)
+      member.kick("Kicked " + member.displayName)
         .catch(console.log("broken"))
 
 
     }
     else {
-      message.channel.send("fuck you get perms first")
+      message.channel.send("Insufficient permissions!")
     }
   }
   if (msg.startsWith(`${prefix}skick`)){
@@ -181,7 +173,7 @@ client.on('message', message => {
       memberTK.kick()
     }
     else {
-      message.channel.send("fuck you get perms first")
+      message.channel.send("Insufficient Permissions")
     }
   }
   if (msg.startsWith(`${prefix}rtd`)){
@@ -198,21 +190,6 @@ client.on('message', message => {
 
     message.channel.send("Good Night!");
     message.channel.send("https://tenor.com/view/goodnight-sleep-night-good-kiss-gif-13435713");
-  }
-  if (msg.startsWith(`${prefix}ASC`)){
-    if (message.member.roles.some(r=>["Server Admin","Goderator"].includes(r.name))){
-      const channel = client.channels.find(ch => ch.name === 'bot-testing');
-      sw = !sw
-      if (sw){
-        channel.send("ASC response on")
-      }
-      else {
-        channel.send("ASC response off")
-      }
-    }
-    else {
-      message.reply("fucking get perms first")
-    }
   }
   if (msg.startsWith(`${prefix}owo`)){
     var myStr = msg.substring(5,msg.length)
@@ -252,7 +229,7 @@ client.on('message', message => {
       myRole.setColor(newColor)
     }
     else {
-      message.channel.send("fuck you get perms first")
+      message.channel.send("Insufficient Permissions!")
     }
   }
   //https://i.imgur.com/zmDPIpZ.jpg
@@ -289,23 +266,12 @@ client.on('message', message => {
       message.reply("fucking get perms first")
     }
   }
-  if (message.content.startsWith(`${prefix}latamorr`)){
-    let member = message.mentions.members.first();
-    message.channel.send("SHUT YO BLACK ASS UP NIGGA" + "<a:pandacrazy:558317561989693442>");
-}
-  if (msg.startsWith(`${prefix}zach`)){
-    message.channel.send("Boosted");
-    const picture = new Attachment('https://i.imgur.com/FRI6VXD.png');
-    message.channel.send(picture);
-}
-  // if (msg.startsWith(`${prefix}sydney`)){
- 
   if (msg.startsWith(`${prefix}stfu`)){
     let member = message.mentions.members.first();
     if (member == null) return;
     message.channel.send("<a:pandacrazy:558317561989693442>" +
         "<a:pandacrazy:558317561989693442>" +
-          " SHUT THE FUCK UP " + member.displayName + "<a:pandacrazy:558317561989693442>" +
+          "SILENCE! " + member.displayName + "<a:pandacrazy:558317561989693442>" +
             "<a:pandacrazy:558317561989693442>");
   }
 })
@@ -325,13 +291,13 @@ function rtd(min,max){
   return Math.floor(Math.random() * (max-min))+min
 }
 function muteuser(){
-  message.channel.send("shut the fuck up")
+  message.channel.send("Muted")
 }
 function checkRoles(message, roles){
 
 }
 function sendMessage(guild, channel, message){
-  guild.channels.find(ch=>name === channel).send(message).catch(console.log("FUCK message fail"))
+  guild.channels.find(ch=>name === channel).send(message).catch(console.log("Fail to send message"))
 }
 function sendImage(message, image){
   const picture = new Attachment(image);
