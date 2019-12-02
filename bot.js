@@ -56,12 +56,7 @@ client.on('message', message => {
      setTimeout(function(){
        newMessage.edit("edited")
      }, 500);})
-
   }
-  // if(message.author.id == 539859377599807510 ){
-  //   message.react('577695919672131594')
-  //
-  // }
   if(msg.includes("pp up", 0)){
     message.react('577695919672131594')
 
@@ -146,9 +141,9 @@ client.on('message', message => {
   }
   if (msg.startsWith(`${prefix}kick`)){
     if (message.member.roles.some(r=>["Server Admin", "Moderator", "Goderator"].includes(r.name))){
-      //message.channel.send("fuck off you annoying ass")
+      //message.channel.send("kicked")
       let member = message.mentions.members.first()
-      message.channel.send(member.displayName + " <= kicking this oerson!")
+      message.channel.send(member.displayName + " <= kicking this person!")
 
       member.kick("Kicked " + member.displayName)
         .catch(console.log("broken"))
@@ -161,7 +156,7 @@ client.on('message', message => {
   }
   if (msg.startsWith(`${prefix}skick`)){
     if (message.member.roles.some(r=>["Server Admin", "Moderator", "Goderator"].includes(r.name))){
-      //message.channel.send("fuck off you annoying ass")
+      //message.channel.send("kicked")
       var kickID = msg.substring(7,msg.length)
       message.reply("Searching for member with ID " + kickID)
       let memberTK = message.guild.members.get(kickID)
@@ -232,27 +227,12 @@ client.on('message', message => {
       message.channel.send("Insufficient Permissions!")
     }
   }
-  //https://i.imgur.com/zmDPIpZ.jpg
-  if (msg.startsWith(`${prefix}athought`)){
-    sendImage(message, 'https://i.imgur.com/zmDPIpZ.jpg')
-  }
   //https://imgur.com/a/2RMWQ
   if (msg.startsWith(`${prefix}adobe reader`)){
     message.channel.send('https://imgur.com/a/2RMWQ')
   }
-  if (msg.startsWith(`${prefix}ryan`)){
-    sendImage(message, 'https://i.imgur.com/vEQcZ8c.png')
-  }
-  if (msg.startsWith(`${prefix}shit`)){
-    sendImage(message, 'https://i.imgur.com/lvlBo77h.jpg')
-  }
-  if (msg.startsWith(`${prefix}ghosty`)){
-    //https://i.imgur.com/mZ4wekz.jpg
-    message.channel.send("coolest girl ever");
-    sendImage(message, 'https://i.imgur.com/VPNsbfL.png')
-  }
   if (msg.startsWith(`${prefix}mute`)){
-    message.channel.send("fuck off :nword:");
+    message.channel.send("test");
   }
   if (msg.startsWith(`${prefix}exitjs1`)){
     if (message.member.roles.some(r=>["Server Admin","Goderator"].includes(r.name))){
@@ -263,7 +243,7 @@ client.on('message', message => {
       process.exit();
     }
     else {
-      message.reply("fucking get perms first")
+      message.reply("get perms first")
     }
   }
   if (msg.startsWith(`${prefix}stfu`)){
